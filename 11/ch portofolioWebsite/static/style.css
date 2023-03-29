@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap" );
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* NAV CONFIG */
+
+header nav {
+    display: flex;
+    background: grey;
+    /* background: rgba(133, 47, 13, 0.8); */
+    color: white;
+    justify-content: space-around;
+    /* padding: 20px; */
+    height: 50px;
+    align-items: center;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+header nav ul li a:hover {
+    color: black;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+.btn-login {
+    background: white;
+    color: brown ;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 30px;
+    transition: 2s;
+}
+
+.btn-login:hover {
+    transform: scale(1.2);
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 18px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+}
+
+section.hero {
+    display: flex;
+    height: 100vh;
+    padding-top: 100px;
+    width: 100%;
+    background: gray url('../static/img/1270570.jpg') center / cover no-repeat;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+section.hero .hero-content {
+    margin-left: 5%;
+    
+}
+
+section.hero .hero-content h1 {
+    color: black;
+    margin: 20px 0px 20px;
+    font-size: 3em;
+}
+
+section.hero .hero-content h3::after {
+    content: "for 2024";
+}
+
+section.hero .hero-content h3 {
+    color: black;
+    margin: 20px 0px 20px;
+    font-size: 1.25em;
+}
+
+section.hero .hero-content .hero-form {
+    width: 200px;
+    max-width: 100%;
+}
+
+section.hero .hero-content .hero-form input:first-child {
+    width: 100%;
+    padding: 14px 130px 14px 15px;
+    border: 2px solid  black;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
+
+section.hero .hero-content .hero-form input:last-child {
+    padding: 10px 30px;
+    border: 2px solid  black;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    background: black;
+    color: white;
+}
+
+section.about .about-content {
+    display: flex;
+    width: 100%;
+    background:  antiquewhite;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+}
+
+section.about .about-content .about-card {
+    width: 40%;
+    box-sizing: border-box;
+}
+
+section.about .about-content .about-card img {
+    width: 250px;
+    height: auto;
+    border-radius: 30px;
+
+}
+
+section.about .about-content .about-text {
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+section.about .about-content .about-text h2 {
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: black;
+    margin-bottom: 15px;
+}
+
+section.about .about-content .about-text p {
+    text-align: justify;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: black;
+}
+
+
+
+footer {
+    background: chocolate;
+    width: 100%;
+    height: 300px;
+}
+
+footer p {
+    text-align: center;
+}
+
+/* MOBILE */
+@media screen and (max-width:576px) {
+
+    header nav {
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    header nav a.nav-item.btn-login {
+        display: none;
+    }
+
+    header nav ul.menu-nav {
+        flex-direction: column;
+        justify-content: space-evenly ;
+        position: absolute;
+        background-color: rgba(128, 128, 128, 0.6);
+        height: 100vh;
+        top: 0;
+        right: 0;
+        margin-top: 50px;
+        padding-left: 10px;
+        transform: translateX(100%);
+        /* transition: all 0.5s linear; */
+    }
+
+    header nav ul.menu-nav.clicked {
+        transform: translateX(0);
+    }
+
+    header nav ul.menu-nav li a {
+        font-size: 2rem;
+    }
+    
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        height: 15px;
+        justify-content: space-between;
+    }
+
+}

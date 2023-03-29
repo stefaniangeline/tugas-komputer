@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planets</title>
+    <style>
+        body {
+           height: 100vh; 
+           background-image: radial-gradient(#161E54, #8758FF, #5CB8E4, #2E0249,#FA58B6);
+           background-repeat: no-repeat;
+           background-size: cover;
+        }
+
+        .sun{
+            height: 10rem;
+            width: 10rem;
+            border-radius: 5rem;
+            margin: 77rem auto;
+            position: relative;
+            background-image: radial-gradient(circle at 50% 70%, #EAE509 18%,orange 77%);
+        }
+        
+        .planet {
+            position: absolute;
+            animation-iteration-count: infinite;
+            animation-timing-function:linear;
+        }
+
+        .earth {
+            height: 3rem;
+            width: 3rem;
+            border-radius: 1.5rem;
+            bottom:10px;
+            right: -350px;
+            transform-origin: -500px center;
+            animation: earthAnimation 6s linear infinite;
+            /* animation-direction: normal; */
+            animation-play-state: running; 
+            background-image: radial-gradient(circle at 50% 70%, green 3%, blue 75%);
+        }
+
+        @keyframes earthAnimation {
+            to{
+                transform:rotateZ(0deg);  
+            }
+            from{
+                transform:rotateZ(-359deg); 
+            }
+        }
+
+
+        .mars {
+            height: 4rem;
+            width: 4rem;
+            border-radius: 2rem;
+            bottom: 25px;
+            right: -100px;
+            transform-origin: -150px center;
+            animation: marsAnimation 3s  linear infinite;
+            animation-play-state: running; 
+            background-image: radial-gradient(circle at 50% 70%, darkred 3%, red 75%);
+        }
+
+        @keyframes marsAnimation {
+            from{
+                transform:rotateZ(0deg);
+            }   
+            to{
+                transform:rotateZ(359deg)
+            }
+        }
+
+        .moon {
+            height: 5rem;
+            width: 5rem;
+            border-radius: 2.5rem;
+            bottom: 30px;
+            right: -150px;
+            transform-origin: -100px center;
+            animation: moonAnimation 4s linear infinite;
+            animation-play-state: running; 
+            background-image: radial-gradient(circle at 50% 70%, #FBF2CF 3%, #FFE9A0 75%);
+
+        }
+
+        @keyframes moonAnimation {
+            0% {
+                transform:rotateZ(0deg);
+            }   
+            100%{
+                transform:rotateZ(359deg)
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sun">
+        <div class="planet mars"></div>
+        <div class="planet earth">
+            <div class="planet moon"></div>
+        </div>    
+    </div>
+</body>
+</html>

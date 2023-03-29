@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>First React</title>
+    <style>
+        body {
+            background-color: #6d9886;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 100%;
+            height: 100vh;
+            box-sizing: border-box;
+            /* background-color: yellowgreen;s */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* div ul li {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        } */
+
+        div ul {
+            list-style: none;  
+        }
+
+        div {
+            justify-content: center;
+        }
+
+        div span {
+            padding-left: 5px;
+        }
+
+        div button {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 20px ;
+            background-color: #E6DDC4;
+            border: none;
+        }
+
+        div input {
+            width: 200px;
+            height: 30px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        div h1 {
+            color: #f7f7f7;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+
+        class App extends React.Component {
+
+            constructor(props) {
+                super(props);
+                this.state = {
+                    tasks : ["task-one", "task-two", "task-three"],
+                    input : ""
+                }
+            }
+
+            render = () => {
+                return(
+                    
+                    <div>
+                       <h1>To do List</h1>
+                       <ul>
+                        {this.state.tasks.map ((task, i) => (
+                                <li key={i}>
+                                    <div>
+                                        <span>{i+1}. {task}</span>
+                                        <button onClick={() => this.deleteTask(i)}>Delete</button>
+                                        
+                                    </div>                                
+                                </li>
+                            )
+                        )}
+                       </ul>
+
+                       <div>
+                            <input type="text" value={this.state.input} onChange={this.handleInput}/>
+                            <button onClick={this.addTask}>Add Task </button>
+                       </div>
+                       <p>Number of task : {this.state.tasks.length}</p>
+
+                    </div>
+                           
+                )
+            }
+
+            handleInput = event => {
+                this.setState({
+                    input : event.target.value
+                })
+            }
+
+            addTask = () => {
+                this.setState (state => ({
+                    tasks : [...state.tasks, state.input],
+                    input : ""
+                }))
+            }
+
+            deleteTask = index => {
+                console.log(index)
+                this.setState(state => {
+                    const tasks = [...state.tasks];
+                    tasks.splice(index, 1);   /* mengambil satu potong index */
+                    return {
+                        tasks : tasks
+                    }
+
+                })
+            }
+        }
+
+        
+
+        ReactDOM.render(<App />, document.getElementById("app"));
+    </script>
+</body>
+</html> 
