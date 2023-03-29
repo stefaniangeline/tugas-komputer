@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Nembak orang</title>
+
+</head>
+<body>
+	<h1>Aku mau ngomong...</h1>
+
+	<img src="https://64.media.tumblr.com/5f2dcc6c70777947ce37709caeed42ec/54257d9155c3061e-9c/s400x600/41e0159084e312f8c8e5e1d4296891f60e2f4fc6.gifv" width="270" height="270" />
+	<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyHShULMXDz7v83n0QpopkgNAdL4RSRIm8lg&usqp=CAU" width="270" height="270">
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		function selectYes() {
+			window.alert("Beneran nih >,< Fix yaa");
+		}
+
+		function selectNo() {
+			// window.alert($("#button-no").offset().left);
+			$("#button-no").offset({left: Math.floor(Math.random() * 100) + 54, top: Math.floor(Math.random() * 440) + 414});
+		}
+	</script>
+	
+	<h3>Kamu mau gak jadi pacar aku?</h3>
+	<button onclick="selectYes()"> Mau </button>
+	<button id="button-no" onclick="selectNo()"> Ga </button>
+</body>
+</html>
